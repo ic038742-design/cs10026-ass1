@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A form for contributing plant information.">
+  <meta name="author" content="Replace with your name">
+  <title>Plant Contribution Form</title>
+</head>
+<body>
+  <!-- Plain HTML contribution form with native HTML5 validation. -->
+  <nav aria-label="Form pages">
+    <a href="contribute.html" aria-current="page">Contribution form</a> |
+    <a href="enquiry.html">Enquiry form</a>
+  </nav>
+  <main>
+    <h1>Plant Contribution Form</h1>
+    <p>All fields are required.</p>
+
+    <form action="contribute.html" method="get" accept-charset="UTF-8">
+      <fieldset>
+        <legend>Contributor and plant details</legend>
+        <p id="name-rules">Names must contain 1-25 letters (A-Z) only, without spaces, numbers or punctuation.</p>
+        <p>
+          <label for="contributor-name">Name of contributor:</label><br>
+          <input type="text" id="contributor-name" name="contributor_name" maxlength="25" pattern="[A-Za-z]{1,25}" title="Enter 1 to 25 letters A-Z only." autocomplete="given-name" aria-describedby="name-rules" required>
+        </p>
+        <p>
+          <label for="plant-name">Plant name:</label><br>
+          <input type="text" id="plant-name" name="plant_name" maxlength="25" pattern="[A-Za-z]{1,25}" title="Enter 1 to 25 letters A-Z only." aria-describedby="name-rules" required>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Plant observation</legend>
+        <p>
+          <label for="plant-photos">Plant photo(s):</label><br>
+          <input type="file" id="plant-photos" name="photos[]" accept="image/*" multiple aria-describedby="photo-rules" required>
+        </p>
+        <p id="photo-rules">Select one or more plant photos.</p>
+        <p>
+          <label for="comments">Comments:</label><br>
+          <textarea id="comments" name="comments" rows="5" cols="30" required></textarea>
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </p>
+    </form>
+    <p>Assignment 1 prototype: Submit validates the fields and reloads this page. Photo contents are not uploaded.</p>
+  </main>
+</body>
+</html>
